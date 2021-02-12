@@ -7,14 +7,16 @@
  */
 
 import React, {Fragment} from 'react';
-import {Text} from 'react-native';
+import {Text, Image, ScrollView} from 'react-native';
 
 const App: () => React$Node = () => {
   return (
-    <Fragment>
-      <Text>Ola</Text>
-      <Text>Ola</Text>
-    </Fragment>
+    <ScrollView>
+      <Text>Ricardo</Text>
+      <Image source={require('./res/img/alura.jpg')} />
+      <Text>Marina</Text>
+      <Image source={require('./res/img/alura.jpg')} />
+    </ScrollView>
   );
 };
 
