@@ -7,7 +7,9 @@
  */
 
 import React, {Fragment} from 'react';
-import {Text, Image, ScrollView} from 'react-native';
+import {Text, Image, ScrollView, Dimensions} from 'react-native';
+
+const largura = Dimensions.get('screen').width;
 
 const App: () => React$Node = () => {
   return (
@@ -16,16 +18,16 @@ const App: () => React$Node = () => {
       <Image
         source={require('./res/img/alura.jpg')}
         style={{
-          width: 300,
-          height: 300,
+          width: largura,
+          height: largura,
         }}
       />
       <Text>Marina</Text>
       <Image
         source={require('./res/img/alura.jpg')}
         style={{
-          width: 300,
-          height: 300,
+          width: largura,
+          height: largura,
         }}
       />
     </ScrollView>
