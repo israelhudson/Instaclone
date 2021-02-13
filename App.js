@@ -15,21 +15,9 @@ const App: () => React$Node = () => {
   return (
     <ScrollView>
       <Text>Ricardo</Text>
-      <Image
-        source={require('./res/img/alura.jpg')}
-        style={{
-          width: estilo.imagem,
-          height: estilo.imagem,
-        }}
-      />
+      <Image source={require('./res/img/alura.jpg')} style={estilo.imagem} />
       <Text>Marina</Text>
-      <Image
-        source={require('./res/img/alura.jpg')}
-        style={{
-          width: estilo.imagem,
-          height: estilo.imagem,
-        }}
-      />
+      <Image source={require('./res/img/alura.jpg')} style={estilo.imagem} />
     </ScrollView>
   );
 };
