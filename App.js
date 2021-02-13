@@ -7,7 +7,7 @@
  */
 
 import React, {Fragment} from 'react';
-import {Text, Image, ScrollView, Dimensions} from 'react-native';
+import {Text, Image, ScrollView, Dimensions, StyleSheet} from 'react-native';
 
 const largura = Dimensions.get('screen').width;
 
@@ -18,20 +18,27 @@ const App: () => React$Node = () => {
       <Image
         source={require('./res/img/alura.jpg')}
         style={{
-          width: largura,
-          height: largura,
+          width: estilo.imagem,
+          height: estilo.imagem,
         }}
       />
       <Text>Marina</Text>
       <Image
         source={require('./res/img/alura.jpg')}
         style={{
-          width: largura,
-          height: largura,
+          width: estilo.imagem,
+          height: estilo.imagem,
         }}
       />
     </ScrollView>
   );
 };
+
+const estilo = StyleSheet.create({
+  imagem: {
+    width: largura,
+    height: largura,
+  },
+});
 
 export default App;
