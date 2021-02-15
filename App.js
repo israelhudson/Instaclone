@@ -7,7 +7,14 @@
  */
 
 import React, {Fragment} from 'react';
-import {Text, Image, ScrollView, Dimensions, StyleSheet} from 'react-native';
+import {
+  Text,
+  Image,
+  ScrollView,
+  Dimensions,
+  StyleSheet,
+  FlatList,
+} from 'react-native';
 
 const largura = Dimensions.get('screen').width;
 
@@ -20,15 +27,18 @@ const informacoes = [
 const App: () => React$Node = () => {
   return (
     <ScrollView>
-      {informacoes.map((foto) => (
-        <Fragment>
-          <Text>{foto.usuario}</Text>
-          <Image
-            source={require('./res/img/alura.jpg')}
-            style={estilo.imagem}
-          />
-        </Fragment>
-      ))}
+      <FlatList
+        data={informacoes}
+        renderItem={(foto) => (
+          <Fragment>
+            <Text>{foto.item.usuario}</Text>
+            <Image
+              source={require('./res/img/alura.jpg')}
+              style={estilo.imagem}
+            />
+          </Fragment>
+        )}
+      />
     </ScrollView>
   );
 };
