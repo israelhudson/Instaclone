@@ -19,9 +19,9 @@ import {
 const largura = Dimensions.get('screen').width;
 
 const informacoes = [
-  {usuario: 'Ricardo'},
-  {usuario: 'Marina'},
-  {usuario: 'Israel'},
+  {id: 1, usuario: 'Ricardo'},
+  {id: 2, usuario: 'Marina'},
+  {id: 3, usuario: 'Israel'},
 ];
 
 const App: () => React$Node = () => {
@@ -29,6 +29,7 @@ const App: () => React$Node = () => {
     <ScrollView>
       <FlatList
         data={informacoes}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({item}) => (
           <Fragment>
             <Text>{item.usuario}</Text>
