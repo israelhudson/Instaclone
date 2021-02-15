@@ -29,9 +29,9 @@ const App: () => React$Node = () => {
     <ScrollView>
       <FlatList
         data={informacoes}
-        renderItem={(foto) => (
+        renderItem={({item}) => (
           <Fragment>
-            <Text>{foto.item.usuario}</Text>
+            <Text>{item.usuario}</Text>
             <Image
               source={require('./res/img/alura.jpg')}
               style={estilo.imagem}
