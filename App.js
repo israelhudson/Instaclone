@@ -11,13 +11,24 @@ import {Text, Image, ScrollView, Dimensions, StyleSheet} from 'react-native';
 
 const largura = Dimensions.get('screen').width;
 
+const informacoes = [
+  {usuario: 'Ricardo'},
+  {usuario: 'Marina'},
+  {usuario: 'Israel'},
+];
+
 const App: () => React$Node = () => {
   return (
     <ScrollView>
-      <Text>Ricardo</Text>
-      <Image source={require('./res/img/alura.jpg')} style={estilo.imagem} />
-      <Text>Marina</Text>
-      <Image source={require('./res/img/alura.jpg')} style={estilo.imagem} />
+      {informacoes.map((foto) => (
+        <Fragment>
+          <Text>{foto.usuario}</Text>
+          <Image
+            source={require('./res/img/alura.jpg')}
+            style={estilo.imagem}
+          />
+        </Fragment>
+      ))}
     </ScrollView>
   );
 };
