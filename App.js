@@ -7,11 +7,9 @@
  */
 
 import React, {Fragment} from 'react';
-import {ScrollView, Dimensions, FlatList} from 'react-native';
-import Cabecalho from './src/Components/Cabecalho';
-import Foto from './src/Components/Foto';
-
-const largura = Dimensions.get('screen').width;
+import {ScrollView, FlatList} from 'react-native';
+import {Cabecalho} from './src/Components/Cabecalho';
+import {Foto} from './src/Components/Foto';
 
 const informacoes = [
   {id: 1, usuario: 'Ricardo'},
