@@ -2,16 +2,24 @@ import React, {Fragment} from 'react';
 import {Image, Text} from 'react-native';
 import estilo from './estilo';
 
-const Foto = () => {
+const Foto = ({urlFoto, descricao}) => {
   return (
     <Fragment>
-      <Image
-        source={require('../../../res/img/alura.jpg')}
-        style={estilo.imagem}
+      <Image source={{uri: urlFoto}} style={estilo.imagem} />
+      <Text>{descricao}</Text>
+      <Image source={pegarImaLike(0)} 
+      style={estilo.like}
       />
-      <Text>Descrição da Foto</Text>
     </Fragment>
   );
 };
+
+const pegarImaLike = (quantidade) => {
+  if(quantidade > 0){
+    return require('../../../res/img/s2-checked.png')
+  }else{
+    return require('../../../res/img/s2.png')
+  }
+}
 
 export default Foto;

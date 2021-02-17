@@ -10,18 +10,13 @@ import React, {Fragment, useEffect, useState} from 'react';
 import {ScrollView, FlatList} from 'react-native';
 import {Cabecalho} from './src/Components/Cabecalho';
 import {Foto} from './src/Components/Foto';
+import lerFotos from './src/api/feed';
 
 const App = () => {
   const [fotos, setFotos] = useState([]);
 
   useEffect(() => {
-    const lerFotos = async () => {
-      const fotosHttp = await fetch('http://10.0.2.2:3030/feed');
-      const fotosJson = await fotosHttp.json();
-      setFotos(fotosJson);
-    };
-
-    lerFotos();
+    lerFotos(setFotos);
   }, []);
 
   return (
@@ -31,8 +26,8 @@ const App = () => {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({item}) => (
           <Fragment>
-            <Cabecalho nomeUsuario={item.userName} />
-            <Foto />
+            <Cabecalho nomeUsuario={item.userName} urlImagem={item.userURL} />
+            <Foto urlFoto={item.url} descricao={item.description} />
           </Fragment>
         )}
       />
