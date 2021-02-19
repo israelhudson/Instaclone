@@ -27,7 +27,11 @@ const App = () => {
         renderItem={({item}) => (
           <Fragment>
             <Cabecalho nomeUsuario={item.userName} urlImagem={item.userURL} />
-            <Foto urlFoto={item.url} descricao={item.description} />
+            <Foto
+                urlFoto={item.url}
+                descricao={item.description}
+                qntLikes={item.likes}
+            />
           </Fragment>
         )}
       />
