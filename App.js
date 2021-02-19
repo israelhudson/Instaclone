@@ -10,6 +10,7 @@ import React, {Fragment, useEffect, useState} from 'react';
 import {ScrollView, FlatList} from 'react-native';
 import {Cabecalho} from './src/Components/Cabecalho';
 import {Foto} from './src/Components/Foto';
+import {Comentarios} from './src/Components/Comentarios';
 import lerFotos from './src/api/feed';
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
                 descricao={item.description}
                 qntLikes={item.likes}
             />
+            <Comentarios comentarios={item.comentarios}/>
           </Fragment>
         )}
       />
